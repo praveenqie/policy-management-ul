@@ -1,0 +1,21 @@
+.nav-link{
+    font-weight: bold;
+    
+}
+.nav-bar-contnet{
+ color: #000000;
+}
+
+
+a {
+    color: black;
+  }
+
+  .navbar-center {    
+              position: absolute;  
+                        left: 92%;  
+                        top:23px;
+                        font-size: large;
+                        font-weight: bold;
+                        color: rgb(2, 27, 19);
+                        transform: translatex(-50%);        }

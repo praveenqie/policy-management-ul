@@ -1,0 +1,102 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-12 col-lg-12 col-xl-4 offset-xl-1">
+        <h4 style="margin-left: 120px;font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">User
+          Registration</h4>
+        <form [formGroup]="register" (ngSubmit)="registerSubmit()">
+
+          <div class="form-outline mb-2">
+            <input type="email" id="form3Example3" class="form-control form-control-md" placeholder="First Name"
+              formControlName="firstName" required autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="text" id="form3Example3" class="form-control form-control-md" placeholder="Last Name"
+              formControlName="lastName" required autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="text" id="form3Example3" class="form-control form-control-md" placeholder="Date of Birth"
+              onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="dob" required
+              autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="text" id="form3Example3" class="form-control form-control-md" placeholder="Address"
+              formControlName="address" required autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="phone" id="form3Example3" class="form-control form-control-md" placeholder="Contact Number"
+              formControlName="phone" required autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="email" id="form3Example3" class="form-control form-control-md" placeholder="Email Address"
+              formControlName="email" required autocomplete="off" />
+
+          </div>
+          <div class="form-outline mb-2">
+            <input type="password" id="form3Example4" class="form-control form-control-md" placeholder="Enter password"
+              formControlName="password" required autocomplete="off" />
+
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-2">
+            <input type="password" id="form3Example4" class="form-control form-control-md"
+              placeholder="Confirm password" formControlName="confirmPassword" required autocomplete="off" />
+
+          </div>
+
+
+
+          <div class="text-center text-lg-start mt-4 pt-2" >
+            <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;background-color:#193833;color: #ffffff;" type="submit"
+              value="submit">Register</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="login"
+                class="link-danger">Login</a></p>
+          </div>
+
+        </form>
+        <!-- <div class="input-box" *ngIf="msgShow"> -->
+          <div *ngIf="error" class="text-danger">
+            {{error.error.message}}
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- Modal -->
+<div *ngIf="isSuccess" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        Registration successfull! <br>
+
+        <p>Here is your policy customer number {{custId}} </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" data-bs-dismiss="modal" (click)="navigateLogin()" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

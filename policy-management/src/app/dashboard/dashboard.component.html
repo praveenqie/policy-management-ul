@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col-11 mt-4">
+       
+    </div>
+    <div class="col-1 mt-4">
+        <button class="btn" (click)="navigateLogin()" style="background-color: #193833;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: bold;color: #ffffff;">Logout</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="card shadow-lg mb-5 g-white rounded">
+            <!-- <img src="assets/images/goals.jpg" height="200" class="card-img-top" alt="..."> -->
+            <div class="card-body"
+                style="text-align: justify;font-family:'Times New Roman', Times, serif;font-size: 22;font-weight: bolder;">
+                <div class="row">
+                    <div class="col-12 mb-2 d-flex">
+                        <img src="assets/images/logo.jpeg" style="justify-content: center;" height="70" width="50%"
+                            alt="...">
+                        <p
+                            style="margin-left:10px;font-family: Verdana, Geneva, Tahoma, sans-serif;color:#193833;font-weight: bold;font-size: x-large;">
+                            USER INFORMATION</p>
+                    </div>
+                    <div class="col-12 ">
+                        <table>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">First Name:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">Last Name:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">Date of Birth:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.dob}}</td>
+                            </tr>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">Address:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.address}}</td>
+                            </tr>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">Phone:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.contactNumber}}</td>
+                            </tr>
+                            <tr>
+                                <td class="common-label-style" style="color: #193833;  font-size: large;">Email:</td>
+                                &nbsp; &nbsp; &nbsp;
+                                <td class="text-start common-para-style">{{userPolicy.users.email}}</td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8" style="justify-content: center;">
+                <p
+                    style="font-family: Verdana, Geneva, Tahoma, sans-serif;color:#193833;font-weight: bold;font-size: x-large;">
+                    ALL RUNNING POLICIES</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <table class="table table-borderd  table-striped" style="background-color: rgb(146, 180, 136);">
+                    <thead style="background-color: black;color:#ffffff">
+                        <tr>
+                            <th>POLICY NO</th>
+                            <th>POLICY NAME</th>
+                            <th>AMOUNT PAID</th>
+                            <th>POLICY END DATE</th>
+                            <th>VALID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let policy of userPolicy.policyDetails'
+                            style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600;font-size: medium;">
+                            <td>{{policy.id}}</td>
+                            <td>{{policy.policyName}}</td>
+                            <td>{{policy.aamountPaid}}</td>
+                            <td>{{policy.policyEndDate}}</td>
+                            <td>{{policy.valid}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8" style="justify-content: center;">
+                <p
+                    style="font-family: Verdana, Geneva, Tahoma, sans-serif;color:#193833;font-weight: bold;font-size: x-large;">
+                    ALL POLICY DETAILS</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <table class="table table-borderd  table-striped" style="background-color: rgb(146, 180, 136);">
+                    <thead style="background-color: black;color:#ffffff">
+                        <tr>
+                            <th>POLICY NO</th>
+                            <th>POLICY NAME</th>
+                            <th>POLICY DETAILS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let policy of policyAllPolicies'
+                            style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600;font-size: medium;">
+                            <td>{{policy.id}}</td>
+                            <td>{{policy.policyName}}</td>
+                            <td>{{policy.policyDetails}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

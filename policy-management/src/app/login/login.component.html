@@ -1,0 +1,48 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-4 offset-xl-1">
+          <form [formGroup]= "customer" (ngSubmit) ="loginSubmit()" class="flex-c" >
+            <div style="display: flex;justify-content: center;">
+              <img height="65px" width="110px" style="margin-left: 170px;" src="assets/images/logo.jpeg" />
+          </div>
+            <div class="input-box">
+              <span class="label">User ID</span>
+              <div class=" flex-r input">
+                <input type="number" formControlName="custId" placeholder="Enter your customer ID">
+                <i class="fas fa-at"></i>
+              </div>
+              <div class = "alert alert-danger" [hidden]="customer.controls['custId'].valid || customer.controls['custId'].pristine" >
+                  Enter valid user id
+              </div>
+            </div>
+  
+            <div class="input-box">
+              <span class="label">Password</span>
+              <div class="flex-r input">
+                <input type="password" formControlName="password"  placeholder="Enter your login passsword" >
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class = "alert alert-danger" [hidden]="customer.controls['password'].valid || customer.controls['password'].pristine" >
+                  Password must be min 8 and include 1 special character,1 number,1 capital letter
+              </div>
+            </div>
+            <div *ngIf ="err" class ="text-danger">
+              {{err.error.message}}
+          </div>
+       
+            <div  class="button-center"style="display:flex;">
+              <input class="btn" style="padding-left:25px;padding-right:25px;background-color: #193833;color: #ffffff;"  type="submit" value="Log In"
+              >
+          </div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+   
+  </section>
